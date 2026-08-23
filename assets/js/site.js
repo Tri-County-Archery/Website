@@ -89,8 +89,11 @@
   }
   function parseRegTimeRange(reg) {
     if (!reg || typeof reg !== 'string') return null;
-    var m = reg.match(/(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*(?:\u2013|\u2014|-|to)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i);
+    var m = reg.match(/(\d{1,2})(?::(\d{2}))?\s*(am|pm)?\s*(?:\u2013|\u2014|-|to)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)?/i);
     if (!m) return null;
+    var startMer = m[3] ? m[3].toLowerCase() : (m[6] ? m[6].toLowerCase() : null);
+    var endMer = m[6] ? m[6].toLowerCase() : startMer;
+    if (!startMer || !endMer) return null;
 
     function to24(h, ampm) {
       var hh = h % 12;
@@ -98,9 +101,9 @@
     }
 
     return {
-      sh: to24(+m[1], m[3]),
+      sh: to24(+m[1], startMer),
       sm: m[2] ? +m[2] : 0,
-      eh: to24(+m[4], m[6]),
+      eh: to24(+m[4], endMer),
       em: m[5] ? +m[5] : 0
     };
   }
