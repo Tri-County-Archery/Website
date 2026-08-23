@@ -1,0 +1,20 @@
+# Windows / OneDrive cruft
+desktop.ini
+Thumbs.db
+ehthumbs.db
+*.lnk
+
+# macOS
+.DS_Store
+
+# Python (build.py)
+__pycache__/
+*.py[cod]
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local scratch — anything here is served on the live site, so keep it clean
+/_local/

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shoot Schedule · Tri-County Archers · Platteville, Wisconsin</title>
+<meta name="description" content="Every Tri-County Archers shoot, league date, banquet and monthly meeting — with hours, fees and whether it's open to the public.">
+<link rel="icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<div class="draftbar"><div class="wrap"><strong>Preview.</strong> The schedule, leagues, dues and club history below are real. Board names, contact details, shoot fees and scores are not in yet — anything tagged <span class="tbd">like this</span> still needs the club's answer.</div></div>
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="index.html">
+      <img src="assets/img/logo-white.png" alt="Tri-County Archers logo">
+      <span class="brand-txt">
+        <span class="brand-name">Tri-County Archers</span>
+        <span class="brand-sub">Grant · Iowa · Lafayette · Wisconsin</span>
+      </span>
+    </a>
+    <button class="burger" aria-label="Menu">☰</button>
+    <nav class="nav">
+      <a href="index.html" class="">Home</a><a href="schedule.html" class="on">Schedule</a><a href="leagues.html" class="">Leagues</a><a href="contests.html" class="">Contests</a><a href="range.html" class="">Range</a><a href="photos.html" class="">Photos</a><a href="about.html" class="">About</a><a href="contact.html" class="">Contact</a>
+      <a href="membership.html" class="cta">Join the Club</a>
+    </nav>
+  </div>
+</header>
+<section class="phead"><div class="wrap">
+  <div class="crumb">The calendar</div><h1>Shoot Schedule</h1><p>One page, every date. Three shoots a year, two leagues, the banquet and the monthly meetings.</p>
+</div></section>
+<section class="sec">
+  <div class="wrap">
+
+    <div class="filters" id="sched-filters">
+      <span class="filters-lbl">Show</span>
+      <button class="chip on" data-f="all">Everything</button>
+      <button class="chip" data-f="public">Open to the public</button>
+      <button class="chip" data-f="members">Members</button>
+      <button class="chip" data-f="3D">Outdoor 3D</button>
+      <button class="chip" data-f="Indoor">Indoor</button>
+      <button class="chip" data-f="League">Leagues</button>
+      <button class="chip" data-f="Meeting">Meetings</button>
+      <button class="chip" data-f="past">Past events</button>
+    </div>
+
+    <div class="tbl-wrap">
+      <table class="t stack t-sched">
+        <thead><tr><th>Date</th><th>Event</th><th>Hours</th><th>Cost</th><th>Add it</th></tr></thead>
+        <tbody id="sched-body"></tbody>
+      </table>
+    </div>
+
+    <div class="grid g2" style="margin-top:38px">
+      <div class="call call-forest">
+        <h3>Put the whole season on your phone</h3>
+        <p>Every event above has an <strong>Add to Google Calendar</strong> button. Or take the whole
+          season in one file and import it into Google Calendar, Apple Calendar or Outlook.</p>
+        <a href="#" id="ics" class="btn btn-forest btn-sm">Download calendar file (.ics)</a>
+      </div>
+      <div class="call">
+        <h3>Printable season schedule</h3>
+        <p>One page, folds in a pocket. This is the sheet to hand out at other clubs' shoots —
+          it's how word actually spreads in this sport.</p>
+        <a href="#" class="btn btn-out btn-sm">Season schedule PDF <span class="tbd">to build</span></a>
+      </div>
+    </div>
+
+    <div class="note">
+      <strong>How the year runs.</strong> Indoor league starts the first Thursday in January and runs
+      ten weeks. The banquet is in early February, and the Brush Shoot — our indoor 3D shoot —
+      lands a week after it. The two outdoor 3D shoots come in the spring once the course is set. The
+      outdoor 3D league starts the first Wednesday in June and runs ten weeks through the summer.
+      Monthly meetings carry on year round: third Wednesday June through December, third Thursday
+      January through May.
+    </div>
+
+    <div class="note">
+      <strong>Course setup and teardown days aren't on here yet.</strong> The 3D course goes up in the
+      spring and comes down in the fall, and that's members turning out with tools and a trailer. Once
+      the dates are set they'll appear on this page like everything else.
+      <span class="tbd">needs dates</span>
+    </div>
+
+    <h2 id="first-time" style="margin-top:56px">First time at a shoot?</h2>
+    <p class="lead" style="max-width:46em">Everything worth knowing before you drive out.</p>
+
+    <div class="grid g2" style="margin-top:26px">
+      <div class="card card-pad">
+        <h3>How a 3D shoot works</h3>
+        <p>Show up any time inside the posted hours, pay at the clubhouse and get a scorecard. Then
+          walk the course &mdash; 40 foam animal targets set along trails through the woods, at
+          distances you judge yourself. The scoring rings sit in the vitals; the tighter the ring you
+          hit, the more points.</p>
+        <p>You go at your own pace with whoever you came with. There's no start gun and no assigned
+          groups. Most people take two to three hours and stop at the food stand somewhere in the
+          middle. At the end you turn in your card.</p>
+        <p style="margin-bottom:0">Nobody there is going to laugh at your first score. Half of them
+          can tell you exactly what they shot the first time and it wasn't good either.</p>
+      </div>
+      <div class="card card-pad">
+        <h3>What to bring</h3>
+        <p>Your own bow and arrows, <strong>field points only</strong> &mdash; broadheads tear foam
+          targets apart. Bring your release if you shoot compound.</p>
+        <ul class="tick" style="margin-bottom:0">
+          <li><strong>Cash</strong> for the door fee and the food stand. Card readers are hit or miss out here.</li>
+          <li><strong>Boots</strong> for the outdoor course. It's timber, and it's often wet.</li>
+          <li><strong>Bug spray</strong> May through August. This is not optional in June.</li>
+          <li><strong>Blaze orange</strong> is a good idea in the fall if you're walking the property outside of a shoot.</li>
+        </ul>
+      </div>
+      <div class="card card-pad">
+        <h3>What it costs</h3>
+        <div class="kv" style="margin:0">
+          <div><dt>Posted shoots</dt><dd>Fees for 2027 not set yet <span class="tbd">needs fees</span></dd></div>
+          <div><dt>Guest of a member</dt><dd>$<span data-club="guestFee">5</span> to shoot the course</dd></div>
+          <div><dt>Membership</dt><dd>$<span data-club="dues">25</span> a year, single or family</dd></div>
+          <div><dt>League entry</dt><dd>$40 indoor &middot; $35 outdoor, per 10-week season</dd></div>
+        </div>
+      </div>
+      <div class="card card-pad">
+        <h3>Walk-through shooting</h3>
+        <p>Our 3D shoots are walk-through: no assigned groups, no start time, turn up inside the posted
+          hours. Most people take two to three hours on the 40-target outdoor course; the indoor Brush
+          Shoot is quicker.</p>
+        <p style="margin-bottom:0">Got a question first? <a href="contact.html">Send us a note</a> and
+          somebody who's actually out here will answer it &mdash; what to bring, whether your setup is
+          fine, whether to bring the kids.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div class="ftr-brand">
+        <img src="assets/img/logo-white.png" alt="">
+        <p><strong style="color:#fff">Tri-County Archers</strong><br>
+        9145 County Line Rd<br>Platteville, WI 53818<br>
+        <span data-club="phone">###-###-####</span> <span class="tbd">number needed</span></p>
+        <p class="small"><a href="https://www.google.com/maps/dir/?api=1&destination=9145+County+Line+Rd%2C+Platteville%2C+WI+53818" style="display:inline" target="_blank" rel="noopener noreferrer">Directions in Google Maps &rarr;</a></p>
+        <p class="small">Serving Grant, Iowa and Lafayette counties since
+          <span data-club="founded">1937</span>.</p>
+      </div>
+      <div>
+        <h4>Shooting</h4>
+        <a href="schedule.html">Shoot Schedule</a>
+        <a href="leagues.html">Leagues</a>
+        <a href="leagues.html#standings">League Standings</a>
+        <a href="contests.html">Contests</a>
+      </div>
+      <div>
+        <h4>The Club</h4>
+        <a href="membership.html">Become a Member</a>
+        <a href="range.html">Range &amp; Directions</a>
+        <a href="photos.html">Photos</a>
+        <a href="sponsors.html">Our Sponsors</a>
+        <a href="about.html">About the Club</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div>
+        <h4>Stay in the loop</h4>
+        <p class="small">League start dates, weather calls and shoot reminders. No more than a couple of emails a month.</p>
+        <form class="news" onsubmit="event.preventDefault();this.innerHTML='<p class=\'small\' style=\'margin:0;color:#A8D5B8\'>Thanks — you\'re on the list.</p>'">
+          <input type="email" placeholder="your@email.com" required aria-label="Email">
+          <button class="btn btn-blaze btn-sm" type="submit">Go</button>
+        </form>
+        <p class="small" style="margin-top:14px">
+          <a href="https://www.facebook.com/TriCountyArchers/" style="display:inline" target="_blank" rel="noopener noreferrer">Facebook</a> ·
+          <a href="https://www.instagram.com/tricountyarchers/" style="display:inline" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+      </div>
+    </div>
+    <div class="ftr-bot">
+      <span>&copy; <span data-year>2026</span> Tri-County Archers Club, Inc. · Established 1937 as the Iowa-Grant Conservation Club</span>
+      <span>Home to the Iowa-Grant Trap Team · Grant County 4-H Shooting Sports · UW-Platteville Pioneer Sportsman's Club</span>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
