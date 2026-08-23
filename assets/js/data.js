@@ -22,7 +22,7 @@ const CLUB = {
   formerName: "Iowa-Grant Conservation Club",
   address: "9145 County Line Rd, Platteville, WI 53818",
   phone: "###-###-####",                            // real number still needed
-  email: "info@tricountyarchers.org",               // guess
+  email: "tricountyarcheryclub@gmail.com",
   facebook: "https://www.facebook.com/TriCountyArchers/",
   instagram: "https://www.instagram.com/tricountyarchers/",
 
@@ -30,6 +30,7 @@ const CLUB = {
   dues: 25,                                         // dollars/year, single or family
   duesNote: "Single or family, same price. Calendar year.",
   guestFee: 5,                                      // dollars per guest brought by a member
+  shootFee: 15,                                     // dollars per person, Brush Shoot + both outdoor 3D shoots
 
   // Facility
   targetsOutdoor: 40,     // outdoor 3D course
@@ -151,7 +152,8 @@ const LEAGUE_DEFS = [
     weeks: 10,
     scoring: "team",
     cost: "$35 for the season",
-    round: "The 3D course — foam animals at unmarked distances, judged by eye. Shot in teams of two.",
+    round: "14 targets, two arrows each — foam animals at unmarked distances, judged by eye. "
+         + "28 arrows a week, 20 points possible per arrow, 560 possible for the week. Shot in teams of two.",
     time: "League night is Wednesday — but shoot your score any day of the week that works for you.",
     who: "Members",
     coord: "League coordinator",
@@ -216,20 +218,20 @@ const SHOOT_DEFS = [
     name: "Brush Shoot", type: "shoot", cat: "Indoor", who: "public",
     rule: { month: 1, weekday: 6, nth: 2, label: "the second Saturday in February" },
     overrides: {}, days: 2,
-    reg: "Hours to be posted", fees: "Fees to be posted",
+    reg: "Hours to be posted", fees: "$" + CLUB.shootFee + " per person",
     detail: "The club's indoor 3D shoot — 28 targets set through the clubhouse with brush and trees "
           + "hauled in to build a walk-through course indoors. Short ranges, awkward angles, and "
           + "nothing else like it in the area.",
-    contact: "Shoot chair", tag: "hours, fees and contact to confirm"
+    contact: "Shoot chair", tag: "hours and contact to confirm"
   },
   {
     name: "Outdoor 3D Shoot", type: "shoot", cat: "3D", who: "public",
     rule: { month: 3, weekday: 6, nth: 1, label: "the first Saturday in April" },
     overrides: {}, days: 2,
-    reg: "Hours to be posted", fees: "Fees to be posted",
+    reg: "Hours to be posted", fees: "$" + CLUB.shootFee + " per person",
     detail: "First of the year's two outdoor 3D shoots. 40 targets on the walk-through course, "
           + "unmarked distances.",
-    contact: "Shoot chair", tag: "hours, fees and contact to confirm"
+    contact: "Shoot chair", tag: "hours and contact to confirm"
   },
   {
     /* Fourth Saturday, which is what the 2026-27 dates worked out to.
@@ -238,10 +240,10 @@ const SHOOT_DEFS = [
     name: "Outdoor 3D Shoot", type: "shoot", cat: "3D", who: "public",
     rule: { month: 4, weekday: 6, nth: 4, label: "the fourth Saturday in May" },
     overrides: {}, days: 1,
-    reg: "Hours to be posted", fees: "Fees to be posted",
+    reg: "Hours to be posted", fees: "$" + CLUB.shootFee + " per person",
     detail: "Second outdoor 3D shoot of the year. 40 targets on the walk-through course, "
           + "unmarked distances.",
-    contact: "Shoot chair", tag: "hours, fees and contact to confirm"
+    contact: "Shoot chair", tag: "hours and contact to confirm"
   }
 ];
 
@@ -323,12 +325,11 @@ const RESULTS = {
   "outdoor-3d-league-2026": {
     title: "Outdoor 3D League",
     season: "Summer 2026",
-    status: "Final · 10 weeks · two-archer teams",
+    status: "Final · 10 weeks · two-archer teams · 14 targets, 2 arrows each, 560 possible per week",
     format: "team",
     weeks: 10,
     updated: "2026-08-22",
     decidedBy: "Total points over the ten weeks decides the league.",
-    scoringTag: "confirm what a perfect round is on the course, so the numbers read clearly",
     teams: [
       { team: 3, total: 10185, avg: 509.25, archers: [
         { name: "Dustin", total: 5110, avg: 511,

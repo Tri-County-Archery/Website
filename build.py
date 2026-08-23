@@ -384,13 +384,12 @@ phead("The calendar", "Shoot Schedule",
           <li><strong>Cash</strong> for the door fee and the food stand. Card readers are hit or miss out here.</li>
           <li><strong>Boots</strong> for the outdoor course. It's timber, and it's often wet.</li>
           <li><strong>Bug spray</strong> May through August. This is not optional in June.</li>
-          <li><strong>Blaze orange</strong> is a good idea in the fall if you're walking the property outside of a shoot.</li>
         </ul>
       </div>
       <div class="card card-pad">
         <h3>What it costs</h3>
         <div class="kv" style="margin:0">
-          <div><dt>Posted shoots</dt><dd>Fees for 2027 not set yet <span class="tbd">needs fees</span></dd></div>
+          <div><dt>Posted shoots</dt><dd>$<span data-club="shootFee">15</span> per person</dd></div>
           <div><dt>Guest of a member</dt><dd>$<span data-club="guestFee">5</span> to shoot the course</dd></div>
           <div><dt>Membership</dt><dd>$<span data-club="dues">25</span> a year, single or family</dd></div>
           <div><dt>League entry</dt><dd>$40 indoor &middot; $35 outdoor, per 10-week season</dd></div>
@@ -430,9 +429,9 @@ phead("Weekly shooting", "Leagues &amp; Standings",
 
     <div class="call call-forest" style="margin-bottom:34px">
       <h3>You don't have to shoot on league night</h3>
-      <p style="margin-bottom:0">Most people do — it's more fun with a crowd. But if Thursday nights are
-        when you work, or the kid has practice, or you'd rather have the course to yourself on a
-        Sunday morning: <strong>shoot your score whenever it's convenient during the week.</strong>
+      <p style="margin-bottom:0">Most people do — it's more fun with a crowd. But if league night is
+        when you work, or the kid has practice, or you'd rather have the course to yourself some other
+        day: <strong>shoot your score whenever it's convenient during the week.</strong>
         It counts the same. That's the answer to almost every reason people give for not joining a league.</p>
     </div>
 
@@ -456,7 +455,8 @@ phead("Weekly shooting", "Leagues &amp; Standings",
           yourself — that's most of the skill, and it's why 3D translates to hunting better than
           anything shot on a flat lane. Scoring rings sit in the vitals.</p>
         <p class="small muted" style="margin-bottom:0">Our outdoor league shoots this in <strong>teams of
-          two</strong> over ten weeks, and the league is decided on total points. Field points only —
+          two</strong> over ten weeks — 14 targets, two arrows each, 20 points possible per arrow, 560
+          possible for the week — and the league is decided on total points. Field points only —
           broadheads destroy foam targets.</p>
       </div>
       <div class="card card-pad">
@@ -801,8 +801,7 @@ phead("Get in touch", "Contact Us",
             send.</p>
           <p style="margin-bottom:0" class="small muted">Nothing happened? Some browsers and webmail
             setups block this. Email the club directly at
-            <a data-club-email href="#">info@tricountyarchers.org</a>
-            <span class="tbd">placeholder address</span>, or message us on
+            <a data-club-email href="#">tricountyarcheryclub@gmail.com</a>, or message us on
             <a href="{FB}" target="_blank" rel="noopener noreferrer">Facebook</a>.</p>
         </div>
 
@@ -821,9 +820,7 @@ phead("Get in touch", "Contact Us",
 
         <div class="card card-pad" style="margin-bottom:18px">
           <h4>Email</h4>
-          <p style="font-weight:700;margin-bottom:4px"><a data-club-email href="#">info@tricountyarchers.org</a></p>
-          <p class="small muted" style="margin:0">Placeholder address <span class="tbd">guess</span>
-            &mdash; the club should set up something that isn't tied to one person's inbox.</p>
+          <p style="font-weight:700;margin-bottom:0"><a data-club-email href="#">tricountyarcheryclub@gmail.com</a></p>
         </div>
 
         <div class="card card-pad" style="margin-bottom:18px">

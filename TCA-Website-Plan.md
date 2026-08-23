@@ -5,8 +5,8 @@
 **Counties:** Grant · Iowa · Lafayette (it's in the logo)
 **Social:** [Facebook](https://www.facebook.com/TriCountyArchers/) · [Instagram](https://www.instagram.com/tricountyarchers/)
 **Other web presence:** an empty venue stub on [wiarchery.com](https://wiarchery.com/venue/tri-county-archers/)
-**Status:** All ten pages built, and **the real club facts in §2 are live on the site** (§8). Every date is now confirmed and internally consistent. What's left is contact details, board names, shoot fees and scores (§7).
-**Updated:** August 22, 2026
+**Status:** All ten pages built, and **the real club facts in §2 are live on the site** (§8). Every date is confirmed and internally consistent, the club email is real, and shoot fees are set. What's left is the club phone number, board names, and scores (§7).
+**Updated:** August 23, 2026
 
 > **Where this stands.** The first draft filled every unknown with a plausible guess, each tagged
 > yellow **guess** on the page. Dustin has since supplied the real schedule, dues, league structure,
@@ -83,7 +83,7 @@ plainly on the Leagues page, because it removes the main reason people don't sig
 
 | | Indoor League | Outdoor League |
 |---|---|---|
-| **Round** | 30-arrow Vegas | 3D course |
+| **Round** | 30-arrow Vegas — 300 possible | 14 targets, 2 arrows each, 20 pts/arrow — **560 possible per week** |
 | **Format** | **Individual** | **Two-archer teams**, decided on **total points** |
 | **Length** | 10 weeks | 10 weeks |
 | **Entry** | **$40** | **$35** |
@@ -94,6 +94,11 @@ plainly on the Leagues page, because it removes the main reason people don't sig
 **The outdoor league is a team league, and that matters for the standings.** Two archers per team;
 each archer's average counts only the weeks they actually shot, but **the league is decided on total
 points**. Those two measures can disagree — see §4.3.
+
+**The league's 14-target course is separate from the 40-target course used for the two public
+outdoor 3D shoots** — a shorter loop for a weekly night, not the same walk. Confirmed: the top score
+in the 2026 data (550) checks out cleanly at 98% of the 560 possible, which is exactly the range a
+strong week should land in.
 
 ### 2.4 Shoots
 
@@ -469,7 +474,6 @@ Short list now. Everything not here is answered in §2.
 | Item | Need |
 |---|---|
 | **Phone number** | Three numbers are in circulation: the draft site has **608-778-8742**; Grant County tourism lists **608-348-8100**; the 4-H newsletter lists Rhonda Hughey at **778-8415**. Which is the club's public number? |
-| **Club email** | A real address, ideally not tied to one person's inbox. **This one got more load-bearing** — the Contact form composes a message addressed to it, so until it's real the form points at a placeholder. |
 | **Officers / board** | Names and contacts — President, VP, Secretary, Treasurer, membership, grounds, league coordinators. This is the single most-visited kind of content after the schedule. |
 | **League coordinators** | One name and contact per league — indoor and outdoor. |
 | **History, 1937 → today** | When it became Tri-County Archers, when the clubhouse went up, how the 3D course came to be, who's remembered. |
@@ -485,7 +489,6 @@ Short list now. Everything not here is answered in §2.
 | **Shoot fees** | Adult / youth / cub pricing for the Brush Shoot and the two outdoor shoots. |
 | **Target brand** | Rinehart, Delta McKenzie, mixed? 3D shooters genuinely choose shoots on this. |
 | **Indoor league end date** | 10 weeks from Jan 7 lands on Mar 11 if run straight through. Any skip weeks? |
-| **Outdoor league target count** | Does league shoot the full 40-target course, or a subset? The 2026 scores run 225–550, which doesn't obviously map to 40 targets — **what's a perfect round?** Without that, a visitor can't tell whether 510 is good. |
 | **Indoor league scoring** | Individual, confirmed. Are there classes, or is it one flat list? |
 | **Team pairing** | How do outdoor league teams get formed — drawn, chosen, carried over year to year? |
 | **Fourth or last Saturday in May?** | The May shoot is generated as the **fourth** Saturday, which matches the confirmed 2027 date. If the club actually means the *last* Saturday, those differ in years when May has five — check a past year or two and I'll switch it. |
@@ -750,13 +753,11 @@ exists on Facebook, where it's invisible to anyone not logged in.
 ## 10. Next steps
 
 1. **Click through the restructured site and redline it.** Eight nav items now, two pages gone and two added — worth walking the whole thing to check nothing you valued got lost in the move (§8 lists where each piece went).
-2. **Get the club email sorted.** It went from nice-to-have to load-bearing: the Contact form composes a message addressed to it. Something not tied to one person's inbox.
-3. **Get the board roster and the club phone.** Biggest remaining hole, and the second-most-visited content after the schedule. The phone reads `###-###-####` until you confirm which number is public.
-4. **Fill in the contest details** — entry deadlines, how Big Buck is scored, and when the pot pays out. Plus any past-winner list, however rough.
-5. **Tell me what a perfect round is on the 3D course.** The 2026 scores are on the site, but without a maximum nobody can tell whether 510 is a good week.
-6. **Send a wide outdoor photo of the course or grounds.** Still the only real gap in the image set.
-7. **Decide on the 90th anniversary.** 1937 → 2027. If the club wants to make something of it, that decision shapes the banquet, the sponsor ask and the About page.
-8. **Take it to the board.** Much easier to get the rest of §7 answered with a working site to look at.
+2. **Get the board roster and the club phone.** Biggest remaining hole, and the second-most-visited content after the schedule. The phone reads `###-###-####` until you confirm which number is public.
+3. **Fill in the contest details** — entry deadlines, how Big Buck is scored, and when the pot pays out. Plus any past-winner list, however rough.
+4. **Send a wide outdoor photo of the course or grounds.** Still the only real gap in the image set.
+5. **Decide on the 90th anniversary.** 1937 → 2027. If the club wants to make something of it, that decision shapes the banquet, the sponsor ask and the About page.
+6. **Take it to the board.** Much easier to get the rest of §7 answered with a working site to look at.
 
 Two things worth doing regardless of what happens to this website:
 

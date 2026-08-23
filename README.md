@@ -200,12 +200,11 @@ Averages are stored raw and rounded for display, so paste them straight out of t
 
 `contact.html` collects a name, email, phone, a topic and a message, then builds a complete
 `mailto:` and hands it to the visitor's own email app. That means it works on a static site with
-no backend, no accounts and no monthly fee — and it works right now, before the club has settled
-on an email address.
+no backend, no accounts and no monthly fee.
 
-The address it targets is `CLUB.email` in `data.js`, currently a placeholder. **That one line is the
-only place the club email lives** — the form, the two links on the Contact page and anything added
-later all read from it, so switching addresses is a single edit.
+The address it targets is `CLUB.email` in `data.js` — currently `tricountyarcheryclub@gmail.com`.
+**That one line is the only place the club email lives** — the form, the two links on the Contact
+page and anything added later all read from it, so switching addresses is a single edit.
 
 **To make messages land straight in an inbox instead**, point the form at a service like Formspree
 or JotForm. That's a change to `wireContact()` in `assets/js/site.js` and nothing else — the form
@@ -236,11 +235,9 @@ Nothing to do when adding a link: just write it normally.
 - The club's public phone number — currently `###-###-####` in `CLUB.phone`
 - Board and officer names and contacts (`about.html`, in `build.py`)
 - League coordinator names (`LEAGUES` in `data.js`)
-- Shoot registration hours and fees by age bracket (`EVENTS` in `data.js`)
-- A real club email address, not tied to one person's inbox
+- Shoot registration hours (`EVENTS` in `data.js` — fees are set: $15/person for the Brush Shoot and both outdoor 3D shoots)
 - Club history between 1937 and now — **2027 is the 90th year**
 - Contest details — entry deadlines, how Big Buck is scored, payout timing, past winners (`CONTESTS` in `data.js`)
-- What a perfect round is on the 3D course, so the league scores can be read in context
 - Point the membership application at the membership chair's inbox (about ten minutes with a form service)
 - Build the membership application and season schedule as PDFs
 - Real sponsor logos and the sponsor list
