@@ -98,6 +98,39 @@
       + '&location=' + encodeURIComponent(CLUB.address);
     return 'https://calendar.google.com/calendar/render?' + q;
   }
+  function icsEscape(s) {
+    return String(s || '')
+      .replace(/\\/g, '\\\\')
+      .replace(/\n/g, '\\n')
+      .replace(/,/g, '\\,')
+      .replace(/;/g, '\\;');
+  }
+  function eventIcsUrl(e) {
+    var start = e.date.replace(/-/g, '');
+    var end = exclusiveEnd(e);
+    var stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+    var uid = 'tca-' + start + '-' + icsEscape(e.name).replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() + '@tricountyarchers';
+    var lines = [
+      'BEGIN:VCALENDAR',
+      'VERSION:2.0',
+      'PRODID:-//Tri-County Archers//Event//EN',
+      'CALSCALE:GREGORIAN',
+      'METHOD:PUBLISH',
+      'BEGIN:VEVENT',
+      'UID:' + uid,
+      'DTSTAMP:' + stamp,
+      'DTSTART;VALUE=DATE:' + start,
+      'DTEND;VALUE=DATE:' + end,
+      'SUMMARY:' + icsEscape(e.name + ' — Tri-County Archers'),
+      'DESCRIPTION:' + icsEscape((e.reg && e.reg !== '—' ? e.reg + '\n' : '')
+                    + (e.fees && e.fees !== '—' ? e.fees + '\n\n' : '\n')
+                    + e.detail),
+      'LOCATION:' + icsEscape(CLUB.address),
+      'END:VEVENT',
+      'END:VCALENDAR'
+    ];
+    return 'data:text/calendar;charset=utf-8,' + encodeURIComponent(lines.join('\r\n'));
+  }
   function mapsUrl() {
     return 'https://www.google.com/maps/dir/?api=1&destination='
       + encodeURIComponent(CLUB.address);
@@ -242,50 +275,45 @@
         if (filter === 'all') return true;
         if (filter === 'public') return e.who === 'public';
         if (filter === 'members') return e.who === 'members';
-        if (filter === 'past') return daysOut(e.end || e.date) < 0;
         return e.cat === filter;
       });
-      if (filter !== 'past') rows = rows.filter(function (e) { return daysOut(e.end || e.date) >= 0; });
-
-      /* Monthly meetings are generated for years ahead, so in the "everything"
-         view they'd bury the three shoots. Show the next few and point at the
-         Meetings filter for the rest. */
-      var hidden = 0;
-      if (filter === 'all') {
-        var seen = 0;
-        rows = rows.filter(function (e) {
-          if (e.type !== 'meeting') return true;
-          seen++;
-          if (seen <= 3) return true;
-          hidden++;
-          return false;
-        });
-      }
+      rows = rows.filter(function (e) { return daysOut(e.end || e.date) >= 0; });
 
       if (!rows.length) {
-        body.innerHTML = '<tr><td colspan="5">Nothing on the calendar matches that filter yet.</td></tr>';
+        body.innerHTML = '<tr><td colspan="4">Nothing on the calendar matches that filter yet.</td></tr>';
         return;
       }
       body.innerHTML = rows.map(function (e) {
         var d = parse(e.date);
+        var slug = (e.name + '-' + e.date).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+        var icsHref = eventIcsUrl(e);
         var dayLine = e.end
           ? DAY[d.getDay()].slice(0, 3) + '–' + DAY[parse(e.end).getDay()].slice(0, 3) + ' ' + d.getFullYear()
           : DAY[d.getDay()] + ' ' + d.getFullYear();
         return '<tr>'
-          + '<td data-l="Date"><strong>' + fmtSpan(e) + '</strong><br><span class="small muted">' + dayLine + '</span></td>'
+          + '<td data-l="Date"><strong>' + fmtSpan(e) + '</strong><br><span class="small muted">' + dayLine + '</span>'
+          + '<div class="cal-cell-action"><details class="cal-menu">'
+          + '<summary class="btn btn-out btn-sm cal-icon-btn" aria-label="Add to calendar" title="Add to calendar">'
+          +   '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
+          +     '<rect x="3" y="4" width="18" height="17" rx="2"></rect>'
+          +     '<line x1="8" y1="2.5" x2="8" y2="6"></line>'
+          +     '<line x1="16" y1="2.5" x2="16" y2="6"></line>'
+          +     '<line x1="3" y1="9" x2="21" y2="9"></line>'
+          +   '</svg>'
+          + '</summary>'
+          + '<div class="cal-pop">'
+          +   '<a target="_blank" rel="noopener" href="' + gcalUrl(e) + '">Google Calendar</a>'
+          +   '<a href="' + icsHref + '">Apple / Outlook (.ics)</a>'
+          +   '<a href="' + icsHref + '" download="tri-county-archers-' + slug + '.ics">Download .ics</a>'
+          + '</div>'
+          + '</details></div></td>'
           + '<td data-l="Event"><span class="ev-name">' + e.name + '</span>' + tags(e)
           +   '<div class="small muted" style="margin-top:4px">' + e.detail + '</div>'
           +   '<div style="margin-top:8px; display:flex; gap:6px; flex-wrap:wrap">' + whoBadge(e.who) + catBadge(e.cat) + '</div></td>'
           + '<td data-l="Hours">' + e.reg + '</td>'
           + '<td data-l="Cost">' + e.fees + '</td>'
-          + '<td data-l="Add it"><a class="btn btn-out btn-sm" target="_blank" rel="noopener" href="'
-          +   gcalUrl(e) + '">+ Google Calendar</a></td>'
           + '</tr>';
-      }).join('')
-      + (hidden ? '<tr><td colspan="5" class="small muted">' + hidden
-          + ' more monthly meetings are on the calendar — third Wednesday June through December, '
-          + 'third Thursday January through May. Use the <strong>Meetings</strong> filter above, or '
-          + 'the calendar download, to see them all.</td></tr>' : '');
+      }).join('');
     }
 
     var chips = document.querySelectorAll('#sched-filters .chip');

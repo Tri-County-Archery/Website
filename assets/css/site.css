@@ -256,6 +256,37 @@ table.t tr.rank1 td:first-child::before{content:'🥇 '}
 table.t tr.rank2 td:first-child::before{content:'🥈 '}
 table.t tr.rank3 td:first-child::before{content:'🥉 '}
 
+/* per-row calendar menu on schedule table */
+.cal-menu{position:relative; display:inline-block}
+.cal-menu summary{list-style:none}
+.cal-menu summary::-webkit-details-marker{display:none}
+.cal-menu summary.btn{padding-right:26px; position:relative}
+.cal-menu summary.cal-icon-btn{
+  width:44px; min-width:44px; padding:9px 18px 9px 9px;
+  display:inline-flex; align-items:center; justify-content:center;
+}
+.cal-menu summary.cal-icon-btn svg{
+  width:16px; height:16px; stroke:currentColor; fill:none;
+  stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
+}
+.cal-menu summary.btn::after{
+  content:'▾'; position:absolute; right:10px; top:50%; transform:translateY(-48%);
+  font-size:.72rem; line-height:1;
+}
+.cal-menu summary.cal-icon-btn::after{right:6px; font-size:.6rem}
+.cal-menu[open] summary.btn::after{content:'▴'}
+.cal-pop{
+  position:absolute; right:0; top:calc(100% + 6px); min-width:210px;
+  background:#fff; border:1px solid var(--line); border-radius:10px;
+  box-shadow:var(--shadow-md); padding:6px; z-index:30;
+}
+.cal-cell-action{margin-top:8px; text-align:center}
+.cal-pop a{
+  display:block; padding:9px 10px; border-radius:7px;
+  color:var(--ink); font-size:.86rem; font-weight:600;
+}
+.cal-pop a:hover{text-decoration:none; background:#F6F2EA; color:var(--forest-mid)}
+
 /* mobile: tables become cards */
 @media(max-width:720px){
   table.t.stack thead{display:none}
@@ -273,6 +304,7 @@ table.t tr.rank3 td:first-child::before{content:'🥉 '}
   }
   table.t.stack td:first-child{padding-top:12px}
   table.t.stack td:last-child{padding-bottom:12px}
+  .cal-pop{position:static; margin-top:8px; box-shadow:var(--shadow-sm)}
 }
 
 /* ---------- cards / grids ---------- */
@@ -474,8 +506,11 @@ ul.tick li::before{
 /* schedule date column */
 #sched-body td:first-child{white-space:nowrap}
 .t-sched thead th:first-child{width:112px}
+.t-sched thead th:first-child{text-align:center}
+#sched-body td:first-child{text-align:center}
 @media(max-width:720px){
   #sched-body td:first-child{white-space:normal}
+  table.t.stack td[data-l="Date"]{text-align:center !important}
   table.t.stack td[data-l="Event"] .small{margin-top:6px}
 }
 /* stat labels */
