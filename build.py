@@ -23,9 +23,8 @@ MAPS = ("https://www.google.com/maps/dir/?api=1&destination="
         "9145+County+Line+Rd%2C+Platteville%2C+WI+53818")
 
 DRAFT = ('<div class="draftbar"><div class="wrap">'
-         '<strong>Preview.</strong> The schedule, leagues, dues and club history below are real. '
-         'Board names, contact details, shoot fees and scores are not in yet — anything tagged '
-         '<span class="tbd">like this</span> still needs the club\'s answer.</div></div>')
+         '<strong>Preview.</strong> This site is still being updated — anything tagged '
+         '<span class="tbd">like this</span> likely needs more info.</div></div>')
 
 def head(title, desc, page):
     return f"""<!DOCTYPE html>
