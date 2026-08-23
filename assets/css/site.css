@@ -262,11 +262,11 @@ table.t tr.rank3 td:first-child::before{content:'🥉 '}
 .cal-menu summary::-webkit-details-marker{display:none}
 .cal-menu summary.btn{padding-right:26px; position:relative}
 .cal-menu summary.cal-icon-btn{
-  width:44px; min-width:44px; padding:9px 18px 9px 9px;
+  width:56px; min-width:56px; padding:9px 22px 9px 11px;
   display:inline-flex; align-items:center; justify-content:center;
 }
 .cal-menu summary.cal-icon-btn svg{
-  width:16px; height:16px; stroke:currentColor; fill:none;
+  width:18px; height:18px; stroke:currentColor; fill:none;
   stroke-width:2; stroke-linecap:round; stroke-linejoin:round;
 }
 .cal-menu summary.btn::after{

@@ -87,10 +87,41 @@
     d.setDate(d.getDate() + 1);
     return d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate());
   }
+  function parseRegTimeRange(reg) {
+    if (!reg || typeof reg !== 'string') return null;
+    var m = reg.match(/(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*(?:\u2013|\u2014|-|to)\s*(\d{1,2})(?::(\d{2}))?\s*(am|pm)/i);
+    if (!m) return null;
+
+    function to24(h, ampm) {
+      var hh = h % 12;
+      return ampm.toLowerCase() === 'pm' ? hh + 12 : hh;
+    }
+
+    return {
+      sh: to24(+m[1], m[3]),
+      sm: m[2] ? +m[2] : 0,
+      eh: to24(+m[4], m[6]),
+      em: m[5] ? +m[5] : 0
+    };
+  }
+  function gcalDateTime(iso, h, m) {
+    var d = parse(iso);
+    return d.getFullYear()
+      + pad(d.getMonth() + 1)
+      + pad(d.getDate())
+      + 'T'
+      + pad(h)
+      + pad(m)
+      + '00';
+  }
   function gcalUrl(e) {
+    var t = !e.end ? parseRegTimeRange(e.reg) : null;
+    var dates = t
+      ? gcalDateTime(e.date, t.sh, t.sm) + '/' + gcalDateTime(e.date, t.eh, t.em)
+      : e.date.replace(/-/g, '') + '/' + exclusiveEnd(e);
     var q = 'action=TEMPLATE'
       + '&text=' + encodeURIComponent(e.name + ' — Tri-County Archers')
-      + '&dates=' + e.date.replace(/-/g, '') + '/' + exclusiveEnd(e)
+      + '&dates=' + dates
       + '&details=' + encodeURIComponent(
           (e.reg && e.reg !== '—' ? e.reg + '\n' : '')
           + (e.fees && e.fees !== '—' ? e.fees + '\n\n' : '\n')
@@ -108,8 +139,15 @@
   function eventIcsUrl(e) {
     var start = e.date.replace(/-/g, '');
     var end = exclusiveEnd(e);
+    var t = !e.end ? parseRegTimeRange(e.reg) : null;
     var stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
     var uid = 'tca-' + start + '-' + icsEscape(e.name).replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() + '@tricountyarchers';
+    var dtstart = t
+      ? 'DTSTART:' + gcalDateTime(e.date, t.sh, t.sm)
+      : 'DTSTART;VALUE=DATE:' + start;
+    var dtend = t
+      ? 'DTEND:' + gcalDateTime(e.date, t.eh, t.em)
+      : 'DTEND;VALUE=DATE:' + end;
     var lines = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
@@ -119,8 +157,8 @@
       'BEGIN:VEVENT',
       'UID:' + uid,
       'DTSTAMP:' + stamp,
-      'DTSTART;VALUE=DATE:' + start,
-      'DTEND;VALUE=DATE:' + end,
+      dtstart,
+      dtend,
       'SUMMARY:' + icsEscape(e.name + ' — Tri-County Archers'),
       'DESCRIPTION:' + icsEscape((e.reg && e.reg !== '—' ? e.reg + '\n' : '')
                     + (e.fees && e.fees !== '—' ? e.fees + '\n\n' : '\n')
@@ -293,7 +331,7 @@
         return '<tr>'
           + '<td data-l="Date"><strong>' + fmtSpan(e) + '</strong><br><span class="small muted">' + dayLine + '</span>'
           + '<div class="cal-cell-action"><details class="cal-menu">'
-          + '<summary class="btn btn-out btn-sm cal-icon-btn" aria-label="Add to calendar" title="Add to calendar">'
+          + '<summary class="btn btn-forest btn-sm cal-icon-btn" aria-label="Add to calendar" title="Add to calendar">'
           +   '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">'
           +     '<rect x="3" y="4" width="18" height="17" rx="2"></rect>'
           +     '<line x1="8" y1="2.5" x2="8" y2="6"></line>'
