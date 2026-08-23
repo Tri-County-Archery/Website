@@ -147,7 +147,6 @@
     el.innerHTML = '<div class="wrap">' + CLUB.alert.text + '</div>';
   }
 
-  /* ---------- homepage: What's Next ---------- */
   /* The league card is the one that needs thinking about: because members
      can shoot their score any day of the week, what matters is which week
      of the season we're in, not which night it is. */
@@ -469,9 +468,8 @@
     if (!el) return;
     el.innerHTML = DUES.map(function (d) {
       return '<tr>'
-        + '<td data-l="Level"><span class="ev-name">' + d.level + '</span>' + tags(d) + '</td>'
-        + '<td data-l="Dues" class="num"><strong>' + d.price + '</strong></td>'
-        + '<td data-l="Work hours" class="num">' + d.hours + '</td>'
+        + '<td data-l="Level" class="center"><span class="ev-name">' + d.level + '</span>' + tags(d) + '</td>'
+        + '<td data-l="Dues" class="center"><strong>' + d.price + '</strong></td>'
         + '<td data-l="Notes">' + d.notes + '</td>'
         + '</tr>';
     }).join('');

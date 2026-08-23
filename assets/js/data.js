@@ -423,18 +423,19 @@ const DUES = [
 const SPONSOR_TIERS = [
   { name:"Bullseye — $500", perks:[
       "Banner at the Brush Shoot and both outdoor 3D shoots",
-      "Raffle recognition at the annual banquet",
-      "Logo on the website homepage and sponsors page",
-      "Recognition from the podium at the banquet"
+      "Named in the shoot-result posts on Facebook, Instagram and this website",
+      "Clickable logo on the website homepage and sponsors page",
+      "Called out with the raffle at the annual banquet"
     ], guess:true },
   { name:"Gold — $250", perks:[
       "Banner at both outdoor 3D shoots",
-      "Raffle recognition at the annual banquet",
-      "Logo on the sponsors page"
+      "Named in the shoot-result posts on Facebook, Instagram and this website",
+      "Logo on the sponsors page",
+      "Raffle recognition at the annual banquet"
     ], guess:true },
   { name:"Supporting — $100", perks:[
       "Name on the sponsors page",
-      "Name listed at the banquet",
-      "Sign at the food stand"
+      "Name listed with the banquet raffle",
+      "Shout-out in a season sponsor-thanks post"
     ], guess:true }
 ];

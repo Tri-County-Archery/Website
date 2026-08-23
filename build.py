@@ -131,7 +131,7 @@ write("index.html", "Home",
 <div id="alert"></div>
 
 <section class="hero">
-  <div class="hero-bg" style="background-image:url('assets/img/dino-3d-target.jpg')"></div>
+  <div class="hero-bg" style="background-image:url('assets/img/flag-sunset.jpg')"></div>
   <div class="hero-in">
     <div class="hero-eyebrow">Platteville, Wisconsin · Est. <span data-club="founded">1937</span></div>
     <h1>Forty targets<br>in the timber.</h1>
@@ -553,24 +553,6 @@ phead("Member contests", "Contests",
       than living and dying in a Facebook post.
     </div>
 
-    <div class="grid g2" style="margin-top:38px">
-      <div class="card card-pad">
-        <h3>What we still need to publish</h3>
-        <ul class="tick" style="margin-bottom:0">
-          <li>Entry deadline for each contest, and who collects the money</li>
-          <li>How Big Buck is scored &mdash; gross, net, typical vs. non-typical? <span class="tbd">needed</span></li>
-          <li>When the pot gets paid out &mdash; at the banquet, or at the end of each season? <span class="tbd">needed</span></li>
-          <li>How an entry gets registered and verified</li>
-        </ul>
-      </div>
-      <div class="card card-pad">
-        <h3>Past winners</h3>
-        <p>Winners will be listed here by year once the club has the records together &mdash; it's the
-          kind of page people come back to.</p>
-        <p class="small muted" style="margin-bottom:0">Send whatever list exists, however rough.
-          <span class="tbd">needs past winners</span></p>
-      </div>
-    </div>
   </div>
 </section>
 """)
@@ -610,7 +592,7 @@ phead("Join", "Become a Member",
       January through December.</p>
     <div class="tbl-wrap">
       <table class="t stack">
-        <thead><tr><th>Level</th><th class="num">Dues / year</th><th class="num">Work hours</th><th>Notes</th></tr></thead>
+        <thead><tr><th class="center">Level</th><th class="center">Dues / year</th><th>Notes</th></tr></thead>
         <tbody id="dues-body"></tbody>
       </table>
     </div>
@@ -1072,6 +1054,74 @@ phead("Support", "Our Sponsors",
       the archers and families who come through here for three shoots a year, two leagues, and a
       banquet that fills the hall.</p>
     <div class="grid g3" id="tiers" style="margin:26px 0 34px"></div>
+
+    <!-- IDEAS (temporary working block — remove before launch) -->
+    <div style="margin:6px 0 34px; padding:20px 22px; background:#FFF8E8; border:2px dashed #C08A16; border-radius:14px">
+      <p style="margin:0 0 16px; color:#6B5111; font-size:.92rem">
+        <strong style="color:#4E3A08">Working ideas — not published yet.</strong> A scratch list of
+        sponsorship mechanisms for the board to sort through, on top of the recommended tiers above.
+        Keep, drop or rework these before any of it goes to a business.
+        <span class="tbd">internal — remove before launch</span></p>
+
+      <div class="grid g2">
+        <div class="card card-pad">
+          <h3>Placement &amp; signage</h3>
+          <ul class="tick" style="margin-bottom:0">
+            <li><strong>Sponsor a target</strong> — a sign or plaque at a specific target on the 3D
+              course carrying the sponsor's name, renewed each year</li>
+            <li><strong>Title a shoot</strong> — "Brush Shoot, presented by ___" on the banner, the
+              schedule and the posts</li>
+            <li><strong>Year-round clubhouse banner</strong> for top-tier sponsors, not just on shoot days</li>
+            <li><strong>QR code on target and course signs</strong> pointing straight to the sponsor's site</li>
+          </ul>
+        </div>
+        <div class="card card-pad">
+          <h3>Branded keepsakes</h3>
+          <p class="small muted" style="margin-top:0">Co-branded with the club logo — something people
+            keep, so the sponsor's name travels with it.</p>
+          <ul class="tick" style="margin-bottom:0">
+            <li>T-shirts</li>
+            <li>Can coozies</li>
+            <li>Branded poker chips</li>
+            <li>Challenge coins</li>
+            <li>Hats, stickers or patches as lower-cost options</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid g2" style="margin-top:16px">
+        <div class="card card-pad">
+          <h3>Raffle &amp; prizes</h3>
+          <ul class="tick" style="margin-bottom:0">
+            <li><strong>Donate raffle items</strong> for the banquet — the club leans on this, so make
+              it an easy, clearly recognized way in</li>
+            <li>Signage on each raffle prize crediting the business that donated it</li>
+            <li><strong>Back a contest payout or trophy</strong> — Big Buck or Fall Turkey named for the
+              sponsor</li>
+          </ul>
+        </div>
+        <div class="card card-pad">
+          <h3>Community &amp; youth</h3>
+          <ul class="tick" style="margin-bottom:0">
+            <li>Back the <strong>Grant County 4-H</strong> program or its equipment and get credited for it</li>
+            <li>Sponsor a <strong>league season</strong> — name on the standings and the league posts</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid g2" style="margin-top:16px">
+        <div class="card card-pad">
+          <h3>In-kind &amp; flexible</h3>
+          <ul class="tick" style="margin-bottom:0">
+            <li><strong>Count an in-kind donation toward a tier</strong> — a donated $500 bow could
+              qualify a business for Bullseye, or whatever tier the value matches</li>
+            <li>Recognize <strong>in-kind help</strong> — materials, food, printing — the same as a cash sponsor</li>
+            <li>Let sponsors <strong>pick their channel</strong> — signage, keepsakes or raffle — for the
+              same tier price</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <div class="grid g2">
       <div class="call call-forest">

@@ -247,6 +247,7 @@ table.t th{
   padding:13px 14px; font-weight:700; white-space:nowrap;
 }
 table.t td{padding:13px 14px; border-top:1px solid var(--line); vertical-align:top}
+table.t th.center, table.t td.center{text-align:center}
 table.t tbody tr:hover{background:#FBF9F5}
 table.t .ev-name{font-weight:700; color:var(--ink)}
 table.t .num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
@@ -265,6 +266,7 @@ table.t tr.rank3 td:first-child::before{content:'🥉 '}
     margin-bottom:13px; padding:6px 0;
   }
   table.t.stack td{border:0; padding:6px 16px; text-align:left !important}
+  table.t.stack td.center{text-align:center !important}
   table.t.stack td::before{
     content:attr(data-l); display:block; font-size:.64rem; font-weight:700;
     letter-spacing:.14em; text-transform:uppercase; color:var(--brown-light); margin-bottom:2px;
