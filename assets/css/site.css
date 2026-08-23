@@ -276,7 +276,7 @@ table.t tr.rank3 td:first-child::before{content:'🥉 '}
 .cal-menu summary.cal-icon-btn::after{right:6px; font-size:.6rem}
 .cal-menu[open] summary.btn::after{content:'▴'}
 .cal-pop{
-  position:absolute; right:0; top:calc(100% + 6px); min-width:210px;
+  position:absolute; left:0; top:calc(100% + 6px); min-width:210px;
   background:#fff; border:1px solid var(--line); border-radius:10px;
   box-shadow:var(--shadow-md); padding:6px; z-index:30;
 }

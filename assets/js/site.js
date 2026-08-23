@@ -117,14 +117,25 @@
       + pad(m)
       + '00';
   }
+  function calendarTimeZone() {
+    if (CLUB && CLUB.timeZone) return CLUB.timeZone;
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      return tz || 'America/Chicago';
+    } catch (err) {
+      return 'America/Chicago';
+    }
+  }
   function gcalUrl(e) {
     var t = !e.end ? parseRegTimeRange(e.reg) : null;
     var dates = t
       ? gcalDateTime(e.date, t.sh, t.sm) + '/' + gcalDateTime(e.date, t.eh, t.em)
       : e.date.replace(/-/g, '') + '/' + exclusiveEnd(e);
+    var tz = calendarTimeZone();
     var q = 'action=TEMPLATE'
       + '&text=' + encodeURIComponent(e.name + ' — Tri-County Archers')
       + '&dates=' + dates
+      + '&ctz=' + encodeURIComponent(tz)
       + '&details=' + encodeURIComponent(
           (e.reg && e.reg !== '—' ? e.reg + '\n' : '')
           + (e.fees && e.fees !== '—' ? e.fees + '\n\n' : '\n')
@@ -145,11 +156,12 @@
     var t = !e.end ? parseRegTimeRange(e.reg) : null;
     var stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
     var uid = 'tca-' + start + '-' + icsEscape(e.name).replace(/[^a-zA-Z0-9]+/g, '-').toLowerCase() + '@tricountyarchers';
+    var tz = calendarTimeZone();
     var dtstart = t
-      ? 'DTSTART:' + gcalDateTime(e.date, t.sh, t.sm)
+      ? 'DTSTART;TZID=' + tz + ':' + gcalDateTime(e.date, t.sh, t.sm)
       : 'DTSTART;VALUE=DATE:' + start;
     var dtend = t
-      ? 'DTEND:' + gcalDateTime(e.date, t.eh, t.em)
+      ? 'DTEND;TZID=' + tz + ':' + gcalDateTime(e.date, t.eh, t.em)
       : 'DTEND;VALUE=DATE:' + end;
     var lines = [
       'BEGIN:VCALENDAR',

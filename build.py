@@ -24,7 +24,7 @@ MAPS = ("https://www.google.com/maps/dir/?api=1&destination="
 
 DRAFT = ('<div class="draftbar"><div class="wrap">'
          '<strong>Preview.</strong> This site is still being updated — anything tagged '
-         '<span class="tbd">like this</span> likely needs more info. · rev 2026.08.23.1</div></div>')
+         '<span class="tbd">like this</span> likely needs more info. · rev 2026.08.23.2</div></div>')
 
 def head(title, desc, page):
     return f"""<!DOCTYPE html>
