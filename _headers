@@ -1,0 +1,11 @@
+# Cloudflare Pages cache rules.
+# HTML must always revalidate so a new deploy shows up immediately on every
+# page (this prevents one page showing an older rev than another).
+/
+  Cache-Control: no-cache, must-revalidate
+/*.html
+  Cache-Control: no-cache, must-revalidate
+
+# CSS/JS are cache-busted with ?v= in the HTML, so they can cache briefly.
+/assets/*
+  Cache-Control: public, max-age=3600

@@ -235,10 +235,12 @@ details.wk table.t th,details.wk table.t td{padding:6px 8px; font-size:.85rem}
 .b-social{background:#F6E3D3; color:#7A4415}
 
 /* ---------- tables ---------- */
-.tbl-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch}
+/* Desktop tables fit, so keep overflow visible or the calendar popup gets
+   clipped by the scroll box; only allow horizontal scroll on small screens. */
+.tbl-wrap{overflow:visible}
 table.t{
-  width:100%; border-collapse:collapse; background:#fff;
-  border-radius:var(--r); overflow:hidden; box-shadow:var(--shadow-sm);
+  width:100%; border-collapse:separate; border-spacing:0; background:#fff;
+  border-radius:var(--r); box-shadow:var(--shadow-sm);
   font-size:.95rem;
 }
 table.t th{
@@ -248,6 +250,11 @@ table.t th{
 }
 table.t td{padding:13px 14px; border-top:1px solid var(--line); vertical-align:top}
 table.t th.center, table.t td.center{text-align:center}
+/* Round the outer corners on the cells since the table no longer clips. */
+table.t thead th:first-child{border-top-left-radius:var(--r)}
+table.t thead th:last-child{border-top-right-radius:var(--r)}
+table.t tbody tr:last-child td:first-child{border-bottom-left-radius:var(--r)}
+table.t tbody tr:last-child td:last-child{border-bottom-right-radius:var(--r)}
 table.t tbody tr:hover{background:#FBF9F5}
 table.t .ev-name{font-weight:700; color:var(--ink)}
 table.t .num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
@@ -289,6 +296,8 @@ table.t tr.rank3 td:first-child::before{content:'🥉 '}
 
 /* mobile: tables become cards */
 @media(max-width:720px){
+  /* Wide non-stacked tables can scroll sideways on phones. */
+  .tbl-wrap{overflow-x:auto; -webkit-overflow-scrolling:touch}
   table.t.stack thead{display:none}
   table.t.stack, table.t.stack tbody, table.t.stack tr, table.t.stack td{display:block; width:100%}
   table.t.stack{box-shadow:none; background:none}

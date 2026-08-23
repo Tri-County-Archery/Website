@@ -6,6 +6,9 @@ import os, datetime
 
 OUT = os.path.dirname(os.path.abspath(__file__))
 
+# Bump on every deploy so cached HTML/CSS/JS all refresh together.
+REV = "2026.08.23.3"
+
 NAV = [
     ("index.html",    "Home"),
     ("schedule.html", "Schedule"),
@@ -24,7 +27,7 @@ MAPS = ("https://www.google.com/maps/dir/?api=1&destination="
 
 DRAFT = ('<div class="draftbar"><div class="wrap">'
          '<strong>Preview.</strong> This site is still being updated — anything tagged '
-         '<span class="tbd">like this</span> likely needs more info. · rev 2026.08.23.2</div></div>')
+         f'<span class="tbd">like this</span> likely needs more info. · rev {REV}</div></div>')
 
 def head(title, desc, page):
     return f"""<!DOCTYPE html>
@@ -38,7 +41,7 @@ def head(title, desc, page):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/site.css?v={REV}">
 </head>
 <body>
 {DRAFT}
@@ -107,8 +110,8 @@ FOOT = f"""
     </div>
   </div>
 </footer>
-<script src="assets/js/data.js"></script>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/data.js?v={REV}"></script>
+<script src="assets/js/site.js?v={REV}"></script>
 </body>
 </html>"""
 
