@@ -150,10 +150,6 @@ write("index.html", "Home",
   <div class="wrap">
     <div class="eyebrow">What's next at the club</div>
     <div class="nextup" id="nextup"></div>
-    <p class="small muted" style="margin:20px 0 0">
-      These four cards are generated from the same schedule file as the
-      <a href="schedule.html">Shoot Schedule</a> page — so they can't go stale while the calendar moves on.
-    </p>
   </div>
 </section>
 
@@ -492,9 +488,8 @@ phead("Weekly shooting", "Leagues &amp; Standings",
       individual.</p>
 
     <div class="note">
-      <strong>Summer 2026 outdoor league is in below.</strong> The indoor table fills in as that season
-      runs. Send score sheets in whatever form they exist — paper cards, a spreadsheet, photos of the
-      wall sheet — and they go up here.
+      <strong>Summer 2026 outdoor league standings are in below.</strong> Indoor league standings go
+      up here once that season starts.
     </div>
 
     <div id="results" style="margin-top:38px"></div>
@@ -524,15 +519,6 @@ phead("Weekly shooting", "Leagues &amp; Standings",
       <div class="card card-pad"><h3 style="margin-bottom:4px">Older</h3><p class="small muted" style="margin:0">Whatever the club has kept</p></div>
     </div>
 
-    <div class="call" style="margin-top:38px">
-      <h3>Scorers: how this gets updated</h3>
-      <p>All the standings on this page come out of one file
-        (<code>assets/js/data.js</code>). Paste the week's scores into the table in that file and every
-        page that shows standings updates at once. Takes about ten minutes a week and nobody has to
-        touch the design.</p>
-      <p style="margin-bottom:0">If the club would rather keep scores in a Google Sheet, the site can
-        read directly from the sheet instead — say the word and we'll wire it up.</p>
-    </div>
   </div>
 </section>
 """)
@@ -688,9 +674,9 @@ phead("Join", "Become a Member",
     <div class="grid g2">
       <div>
         <h2 id="apply" style="margin-bottom:6px">Application</h2>
-        <p class="muted small" style="margin-bottom:20px">This is a working demo — it doesn't send
-          anywhere yet. Wiring it to email the membership chair takes about ten minutes.
-          <span class="tbd">to connect</span></p>
+        <p class="muted small" style="margin-bottom:20px">Fill this in and hit submit — it opens your
+          email app with everything already written out, addressed to the club. Nothing sends until
+          you press send yourself.</p>
         <form class="form" id="apply">
           <div class="fg fg-2">
             <div><label for="fn">First name</label><input id="fn" required></div>
@@ -719,9 +705,13 @@ phead("Join", "Become a Member",
           <button class="btn btn-blaze" type="submit">Submit application</button>
         </form>
         <div class="call hide" id="apply-done" style="margin-top:20px">
-          <h3>That's the idea.</h3>
-          <p style="margin-bottom:0">On the live site this would email the membership chair and send
-            you a copy. Nothing was sent just now.</p>
+          <h3>Your email app should be opening.</h3>
+          <p>Everything you filled in is in the message, addressed to the club. Give it a read and
+            press send.</p>
+          <p style="margin-bottom:0" class="small muted">Nothing happened? Some browsers and webmail
+            setups block this. Email the club directly at
+            <a data-club-email href="#">tricountyarcheryclub@gmail.com</a>, or use the paper
+            application to the right.</p>
         </div>
       </div>
 
@@ -803,14 +793,6 @@ phead("Get in touch", "Contact Us",
             setups block this. Email the club directly at
             <a data-club-email href="#">tricountyarcheryclub@gmail.com</a>, or message us on
             <a href="{FB}" target="_blank" rel="noopener noreferrer">Facebook</a>.</p>
-        </div>
-
-        <div class="note">
-          <strong>Note for the club.</strong> This form works today with no accounts and no monthly
-          fee &mdash; it hands the finished message to the sender's own email app. If you'd rather it
-          arrive straight in an inbox without that step, a form service like Formspree or JotForm drops
-          in without changing anything else on the page.
-          <span class="tbd">decide which, then wire it up</span>
         </div>
       </div>
 

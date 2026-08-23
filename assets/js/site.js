@@ -582,12 +582,36 @@
     if (b && n) b.addEventListener('click', function () { n.classList.toggle('open'); });
   }
 
-  /* ---------- demo form ---------- */
+  /* ---------- membership application ---------- */
+  /* Same approach as the contact form: build a complete mailto and hand it
+     to the applicant's own email app, addressed to the club. */
   function wireForm() {
     var f = document.getElementById('apply');
     if (!f) return;
     f.addEventListener('submit', function (e) {
       e.preventDefault();
+      var val = function (id) {
+        var el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      };
+      var level = val('lv') || 'Membership';
+      var body = [
+        'Name:    ' + val('fn') + ' ' + val('ln'),
+        'Email:   ' + val('em'),
+        'Phone:   ' + (val('ph') || '—'),
+        'Address: ' + (val('ad') || '—'),
+        'Level:   ' + level,
+        'Family members: ' + (val('hh') || '—'),
+        '',
+        'What they shoot: ' + (val('ex') || '—'),
+        '',
+        '— sent from the Tri-County Archers website'
+      ].join('\n');
+
+      window.location.href = 'mailto:' + CLUB.email
+        + '?subject=' + encodeURIComponent('Membership application — ' + val('fn') + ' ' + val('ln'))
+        + '&body=' + encodeURIComponent(body);
+
       var m = document.getElementById('apply-done');
       if (m) { m.classList.remove('hide'); m.scrollIntoView({ block: 'center' }); }
     });
