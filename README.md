@@ -1,4 +1,15 @@
-# Tri-County Archers — website, first pass
+# Tri-County Archers — website
+
+The live site is everything at the root of this repo. Two companion files:
+
+- **[TCA-Website-Plan.md](TCA-Website-Plan.md)** — what the site is for, every confirmed club fact,
+  and the running list of what's still unanswered. Start here.
+- **`source-data/`** — the spreadsheets the standings come from.
+
+> Both sit inside the published directory, so they're reachable on the live site at
+> `/TCA-Website-Plan.md` and `/source-data/…`. Nothing links to them, but they aren't secret.
+> If that stops being fine, they move up one level and Cloudflare Pages publishes only `site/`.
+
 
 Ten pages, static HTML. No database, no monthly fee, nothing to hack.
 Open `index.html` in any browser to look at it.
